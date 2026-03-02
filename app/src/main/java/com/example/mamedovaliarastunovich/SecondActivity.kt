@@ -22,16 +22,31 @@ class SecondActivity : AppCompatActivity() {
         val age = intent.getStringExtra("AGE") ?: "Не указано"
         val desiredGrade = intent.getStringExtra("DESIRED_GRADE") ?: "Не указано"
 
+        // 🔘 Получаем состояние Switch
+        val isBeautiful = intent.getBooleanExtra("IS_BEAUTIFUL", false)
+        val isSmart = intent.getBooleanExtra("IS_SMART", false)
+        val isStrong = intent.getBooleanExtra("IS_STRONG", false)
+
+        // Формируем строку с характеристиками
+        val traits = buildString {
+            if (isBeautiful) append("✓ Красивый  ")
+            if (isSmart) append("✓ Умный  ")
+            if (isStrong) append("✓ Сильный  ")
+            if (!isBeautiful && !isSmart && !isStrong) append("Характеристики не выбраны")
+        }
+
         // Отображаем данные
         val textViewResult = findViewById<TextView>(R.id.text_view_result)
         textViewResult.text = """
-            Данные пользователя:
-            
-            ФИО: $fullName
-            Группа: $groupNumber
-            Возраст: $age
-            Желаемая оценка: $desiredGrade
-        """.trimIndent()
+        Данные пользователя:
+        
+        ФИО: $fullName
+        Группа: $groupNumber
+        Возраст: $age
+        Желаемая оценка: $desiredGrade
+        
+        Характеристики: $traits
+    """.trimIndent()
     }
 
     override fun onStart() {
