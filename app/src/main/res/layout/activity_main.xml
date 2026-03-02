@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_label" />
 
-        <!-- Поле номера группы -->
+        <!-- номера группы -->
         <EditText
             android:id="@+id/edit_text_group"
             android:layout_width="0dp"
@@ -46,7 +46,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_text_full_name" />
 
-        <!-- Поле возраста -->
+        <!-- возраст -->
         <EditText
             android:id="@+id/edit_text_age"
             android:layout_width="0dp"
@@ -58,7 +58,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_text_group" />
 
-        <!-- Поле желаемой оценки -->
+        <!-- оценка -->
         <EditText
             android:id="@+id/edit_text_grade"
             android:layout_width="0dp"
@@ -69,7 +69,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_text_age" />
-
+        <!-- доделать -->
         <EditText
             android:id="@+id/user_data"
             android:layout_width="200dp"

@@ -30,17 +30,17 @@ class MainActivity : AppCompatActivity() {
         val userData: EditText = findViewById(R.id.user_data)
         val button: Button = findViewById(R.id.button)
 
-        // Программный способ перехода (Task 2)
+        // программный способ перехода
         button.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
 
-            // Безопасное получение данных
+            // получка и перевод
             val fullName = findViewById<EditText>(R.id.edit_text_full_name)?.text.toString()
             val groupNumber = findViewById<EditText>(R.id.edit_text_group)?.text.toString()
             val age = findViewById<EditText>(R.id.edit_text_age)?.text.toString()
             val desiredGrade = findViewById<EditText>(R.id.edit_text_grade)?.text.toString()
 
-            // Для отладки - выведем в Log
+            // отладка
             Log.d(TAG, "Передаваемые данные: ФИО=$fullName, Группа=$groupNumber, Возраст=$age, Оценка=$desiredGrade")
 
             intent.putExtra("FULL_NAME", fullName)
@@ -56,18 +56,18 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
 
-            // Данные из EditText
+            // инфа от эдитов
             val fullName = findViewById<EditText>(R.id.edit_text_full_name)?.text.toString()
             val groupNumber = findViewById<EditText>(R.id.edit_text_group)?.text.toString()
             val age = findViewById<EditText>(R.id.edit_text_age)?.text.toString()
             val desiredGrade = findViewById<EditText>(R.id.edit_text_grade)?.text.toString()
 
-            // 🔘 Данные из Switch (главное изменение!)
+            // инфа свитчи
             val isBeautiful = findViewById<Switch>(R.id.switch4).isChecked
             val isSmart = findViewById<Switch>(R.id.switch5).isChecked
             val isStrong = findViewById<Switch>(R.id.switch6).isChecked
 
-            // Для отладки
+            // отладки
             Log.d(TAG, "Switches: Красивый=$isBeautiful, Умный=$isSmart, Сильный=$isStrong")
 
             // Передаём ВСЕ данные
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("AGE", age)
             intent.putExtra("DESIRED_GRADE", desiredGrade)
 
-            // Передаём Switch как Boolean
+            // свитчи в t/f
             intent.putExtra("IS_BEAUTIFUL", isBeautiful)
             intent.putExtra("IS_SMART", isSmart)
             intent.putExtra("IS_STRONG", isStrong)

@@ -16,18 +16,18 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
         Log.d(TAG, "onCreate called")
 
-        // Получаем данные из Intent
+        // получаем данные из Intent
         val fullName = intent.getStringExtra("FULL_NAME") ?: "Не указано"
         val groupNumber = intent.getStringExtra("GROUP_NUMBER") ?: "Не указано"
         val age = intent.getStringExtra("AGE") ?: "Не указано"
         val desiredGrade = intent.getStringExtra("DESIRED_GRADE") ?: "Не указано"
 
-        // 🔘 Получаем состояние Switch
+        //  получаем t/f от  свитчей
         val isBeautiful = intent.getBooleanExtra("IS_BEAUTIFUL", false)
         val isSmart = intent.getBooleanExtra("IS_SMART", false)
         val isStrong = intent.getBooleanExtra("IS_STRONG", false)
 
-        // Формируем строку с характеристиками
+
         val traits = buildString {
             if (isBeautiful) append("✓ Красивый  ")
             if (isSmart) append("✓ Умный  ")
@@ -35,7 +35,7 @@ class SecondActivity : AppCompatActivity() {
             if (!isBeautiful && !isSmart && !isStrong) append("Характеристики не выбраны")
         }
 
-        // Отображаем данные
+        // фулл отображение
         val textViewResult = findViewById<TextView>(R.id.text_view_result)
         textViewResult.text = """
         Данные пользователя:
